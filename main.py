@@ -28,7 +28,6 @@ async def on_ready():
   '''channel00 = client.get_channel(663606787265658891)
   await channel00.send(content=':egg:')'''
         
-
 testserverid=918729030344273940
 
 @client.slash_command(name="portal",description="Create a portal")
@@ -84,9 +83,6 @@ async def on_message(message):
      embedd.add_field(name="Message "+str(index0+1), value="> <@"+str(message2.author.id)+">: ["+smart_truncate1(message2.content)+"]("+(x[index0])[1:]+")", inline=False)
    embedd.set_footer(text="Message links shared by "+str(message.author), icon_url=message.author.display_avatar.url)
    await message.channel.send(embed=embedd)
-    
-    
-    
 
 keep_alive()
 client.run(token)
