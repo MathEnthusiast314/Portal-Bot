@@ -1,9 +1,12 @@
 { pkgs }: {
   deps = [
+    pkgs.libopus
+    pkgs.ffmpeg-full
     pkgs.python38Full
   ];
   env = {
     PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      pkgs.libopus
       # Neded for pandas / numpy
       pkgs.stdenv.cc.cc.lib
       pkgs.zlib
